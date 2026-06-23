@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 11 Months, Angie 💜</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lora', serif;
+      background: #f5eeff;
+      color: #3a2060;
+      min-height: 100vh;
+    }
+
+    .site-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 0 4rem;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #e8d5ff 0%, #d4b3ff 50%, #c49ef8 100%);
+      border-radius: 0 0 36px 36px;
+      padding: 3.5rem 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '♡';
+      position: absolute;
+      font-size: 220px;
+      opacity: 0.06;
+      top: -30px;
+      right: -30px;
+      color: #7c3aed;
+      pointer-events: none;
+    }
+
+    .hero-month {
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+      color: #7c3aed;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-name {
+      font-family: 'Caveat', cursive;
+      font-size: 64px;
+      font-weight: 700;
+      color: #4a1b8c;
+      line-height: 1;
+    }
+
+    .hero-nickname {
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      color: #7c3aed;
+      margin: 0.3rem 0 1rem;
+    }
+
+    .hero-date {
+      display: inline-block;
+      background: rgba(255,255,255,0.55);
+      border-radius: 20px;
+      padding: 6px 20px;
+      font-size: 14px;
+      color: #5b2a9e;
+      border: 1px solid rgba(124,58,237,0.2);
+    }
+
+    .confetti-row {
+      font-size: 24px;
+      margin-top: 1rem;
+      letter-spacing: 6px;
+    }
+
+    /* ── MUSIC BAR ── */
+    .music-bar {
+      margin: 1.5rem 1.2rem 0;
+      background: #ede0ff;
+      border-radius: 18px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border: 1px dashed #b98aef;
+    }
+
+    .music-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #7c3aed;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .music-btn:hover { background: #5b21b6; transform: scale(1.05); }
+    .music-btn:active { transform: scale(0.97); }
+
+    .music-btn svg { width: 18px; height: 18px; fill: white; }
+
+    .music-info { flex: 1; min-width: 0; }
+
+    .music-title {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-weight: 600;
+      color: #4a1b8c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .music-sub {
+      font-size: 11px;
+      color: #8b5cf6;
+      margin-top: 2px;
+    }
+
+    .wave {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+
+    .wave span {
+      width: 3px;
+      background: #8b5cf6;
+      border-radius: 2px;
+      animation: wave-anim 1s ease-in-out infinite;
+    }
+
+    .wave span:nth-child(1) { height: 6px; animation-delay: 0s; }
+    .wave span:nth-child(2) { height: 14px; animation-delay: 0.1s; }
+    .wave span:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+    .wave span:nth-child(4) { height: 18px; animation-delay: 0.15s; }
+    .wave span:nth-child(5) { height: 8px; animation-delay: 0.3s; }
+    .wave span:nth-child(6) { height: 14px; animation-delay: 0.05s; }
+
+    @keyframes wave-anim {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(0.35); }
+    }
+
+    .wave.paused span { animation-play-state: paused; }
+
+    .upload-label {
+      font-size: 22px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .upload-label:hover { transform: scale(1.15); }
+
+    .file-hidden { display: none; }
+
+    /* ── SECTIONS ── */
+    .section {
+      margin: 1.8rem 1.2rem 0;
+    }
+
+    .section-label {
+      font-family: 'Caveat', cursive;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #9c6bd6;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      border-top: 1px dashed #d4b3ff;
+    }
+
+    /* ── LOVE CARD ── */
+    .love-card {
+      background: #fff8ff;
+      border-radius: 18px;
+      border: 1px dashed #c4a0f0;
+      padding: 1.6rem 1.5rem 1.4rem;
+      position: relative;
+    }
+
+    .love-card::before {
+      content: '❝';
+      font-family: 'Caveat', cursive;
+      font-size: 54px;
+      color: #e2c8ff;
+      position: absolute;
+      top: 6px;
+      left: 14px;
+      line-height: 1;
+    }
+
+    .tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(196,158,248,0.45);
+      width: 52px;
+      height: 18px;
+      border-radius: 3px;
+    }
+
+    .love-text {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 15.5px;
+      line-height: 2;
+      color: #4a2080;
+      padding-top: 1.4rem;
+      text-align: center;
+    }
+
+    .love-sig {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      color: #7c3aed;
+      text-align: right;
+      margin-top: 1.2rem;
+    }
+
+    /* ── MEMORIES GRID ── */
+    .memories-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .memory-card {
+      background: #fdf5ff;
+      border-radius: 14px;
+      border: 1px solid #e0c8ff;
+      padding: 1rem 1rem 1.1rem;
+      position: relative;
+    }
+
+    .memory-card .tape {
+      top: -8px;
+      width: 36px;
+      height: 14px;
+      left: 28%;
+    }
+
+    .memory-icon {
+      font-size: 30px;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .memory-title {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      font-weight: 600;
+      color: #5b21b6;
+      margin-bottom: 3px;
+    }
+
+    .memory-desc {
+      font-size: 12.5px;
+      color: #8b5cf6;
+      line-height: 1.6;
+    }
+
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      margin: 2rem 1.2rem 0;
+      padding: 1.8rem 1.5rem;
+      background: #ede0ff;
+      border-radius: 18px;
+      border: 1px dashed #c4a0f0;
+    }
+
+    .footer-text {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      color: #5b21b6;
+      line-height: 1.7;
+    }
+
+    .footer-hearts {
+      font-size: 26px;
+      margin-top: 0.8rem;
+      cursor: pointer;
+      animation: pulse 1.6s ease-in-out infinite;
+      display: inline-block;
+      user-select: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    /* ── FLOATING HEARTS ── */
+    .floating-hearts {
+      position: fixed;
+      pointer-events: none;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      overflow: hidden;
+    }
+
+    .fh {
+      position: absolute;
+      animation: floatUp 4s ease-in forwards;
+      opacity: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(25deg); opacity: 0; }
+    }
+
+    /* ── 27 THINGS ── */
+    .scroll-track {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 0.5rem 1.2rem 1.2rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: #c4a0f0 #ede0ff;
+    }
+
+    .scroll-track::-webkit-scrollbar { height: 5px; }
+    .scroll-track::-webkit-scrollbar-track { background: #ede0ff; border-radius: 4px; }
+    .scroll-track::-webkit-scrollbar-thumb { background: #c4a0f0; border-radius: 4px; }
+
+    .love-chip {
+      flex-shrink: 0;
+      width: 200px;
+      background: #fff8ff;
+      border-radius: 16px;
+      border: 1px dashed #c4a0f0;
+      padding: 1.1rem 1rem;
+      scroll-snap-align: start;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .chip-num {
+      font-family: 'Caveat', cursive;
+      font-size: 36px;
+      font-weight: 700;
+      color: #e2c8ff;
+      line-height: 1;
+      position: absolute;
+      top: 6px;
+      right: 10px;
+    }
+
+    .chip-from {
+      font-family: 'Caveat', cursive;
+      font-size: 11px;
+      color: #b98aef;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .chip-text {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #4a2080;
+      padding-top: 0.2rem;
+    }
+
+    .scroll-hint {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 13px;
+      color: #b98aef;
+      margin-top: 0.2rem;
+      letter-spacing: 1px;
+    }
+
+    /* ── JOURNAL GALLERY ── */
+    .journal-entry {
+      background: #fff8ff;
+      border-radius: 18px;
+      border: 1px dashed #c4a0f0;
+      padding: 1.4rem 1.3rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .journal-date {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      font-weight: 700;
+      color: #5b21b6;
+      margin-bottom: 4px;
+    }
+
+    .journal-caption {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: #7c3aed;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .journal-media {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #ede0ff;
+      border: 1px solid #d4b3ff;
+    }
+
+    .journal-img, .journal-vid {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      max-height: 420px;
+      object-fit: cover;
+    }
+
+    .journal-vid { max-height: 320px; background: #1a0033; }
+
+    .media-placeholder {
+      width: 100%;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: 'Caveat', cursive;
+      color: #9c6bd6;
+      font-size: 14px;
+    }
+
+    .media-placeholder span:first-child { font-size: 36px; }
+
+    .prom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .prom-grid .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .gift-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .gift-item:last-child { margin-bottom: 0; }
+
+    .gift-caption {
+      font-family: 'Caveat', cursive;
+      font-size: 17px;
+      color: #7c3aed;
+      margin-bottom: 8px;
+    }
+
+    /* ── CAROUSEL ── */
+    .carousel-wrap {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .carousel-slide {
+      flex-shrink: 0;
+      width: 100%;
+      position: relative;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+      border-radius: 14px;
+    }
+
+    .slide-label {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(124,58,237,0.75);
+      color: white;
+      font-family: 'Caveat', cursive;
+      font-size: 16px;
+      padding: 4px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.85);
+      border: 1px solid #c4a0f0;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5b21b6;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+
+    .carousel-btn:hover { background: #ede0ff; }
+    .carousel-btn.left { left: 8px; }
+    .carousel-btn.right { right: 8px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 0 2px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d4b3ff;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .dot.active { background: #7c3aed; transform: scale(1.2); }
+
+    /* ── SAM ENTRY ── */
+    .sam-entry {
+      border-color: #7c3aed;
+      border-width: 2px;
+      background: linear-gradient(135deg, #fff8ff 0%, #f3e8ff 100%);
+    }
+
+    .sam-badge {
+      display: inline-block;
+      background: #7c3aed;
+      color: white;
+      font-family: 'Caveat', cursive;
+      font-size: 13px;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .journal-subcaption {
+      font-size: 12px;
+      color: #9c6bd6;
+      font-style: normal;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .hero-name { font-size: 48px; }
+      .hero-nickname { font-size: 20px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .memories-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-hearts" id="hearts-container"></div>
+
+<div class="site-wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-month">✦ 11 months of us ✦</div>
+    <div class="hero-name">Angie</div>
+    <div class="hero-nickname">my Skittle Pop 💜</div>
+    <div class="hero-date">together since August 5th</div>
+    <div class="confetti-row">💜 🫧 ✨ 🩷 💫</div>
+  </div>
+
+  <!-- MUSIC -->
+  <div class="music-bar">
+    <button class="music-btn" id="play-btn" onclick="toggleMusic()" aria-label="Play or pause music">
+      <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </button>
+    <div class="music-info">
+      <div class="music-title" id="music-title">Our song 🎵</div>
+      <div class="music-sub" id="music-sub">click 📁 to add the MP3</div>
+    </div>
+    <div class="wave paused" id="wave">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <label class="upload-label" title="Upload MP3" aria-label="Upload song">
+      📁
+      <input type="file" accept="audio/*" class="file-hidden" onchange="loadMusic(event)">
+    </label>
+    <audio id="bg-audio" src="zoomie lofi guitary.mp3" loop></audio>
+  </div>
+
+  <!-- MESSAGE -->
+  <div class="section">
+    <div class="section-label">💌 a message for you</div>
+    <div class="love-card">
+      <div class="tape"></div>
+      <p class="love-text">
+        Hehehe 11 months, am I rite? 😄<br><br>
+        Well uhm anyways... it's not like I can make you another song,
+        or just write a letter — so I decided to make a whole website 🌐
+        in dedication of the <em>CUUUUUTESSSST</em> girl in the whole whole wide world. 🌍💜<br><br>
+        I love all the things you've done for me, big and small —
+        the letters 💌, the bracelets 📿, every single little thing.
+        I love every day because of you. 🥹<br><br>
+        I love you. Always, Angie. 💜
+      </p>
+      <div class="love-sig">— yours truly, Sheppy2Wavy 🌊</div>
+    </div>
+  </div>
+
+  <!-- MEMORIES -->
+  <div class="section">
+    <div class="section-label">💌 letters & bracelets</div>
+    <div class="memories-grid">
+      <div class="memory-card">
+        <div class="tape"></div>
+        <span class="memory-icon">✉️</span>
+        <div class="memory-title">Her letters</div>
+        <div class="memory-desc">Every word she wrote, kept safe and re-read more times than I'll admit 🥹</div>
+      </div>
+      <div class="memory-card">
+        <div class="tape"></div>
+        <span class="memory-icon">📿</span>
+        <div class="memory-title">Her bracelets</div>
+        <div class="memory-desc">Little pieces she made for me, worn with so much love 💜</div>
+      </div>
+      <div class="memory-card">
+        <div class="tape"></div>
+        <span class="memory-icon">📅</span>
+        <div class="memory-title">August 5th</div>
+        <div class="memory-desc">The day everything changed, in the best possible way ✨</div>
+      </div>
+      <div class="memory-card">
+        <div class="tape"></div>
+        <span class="memory-icon">💜</span>
+        <div class="memory-title">11 months</div>
+        <div class="memory-desc">11 months of choosing each other, every single day 🌙</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="section">
+    <div class="section-label">📸 our memories</div>
+
+    <!-- ENTRY 0: 3 August — Sam -->
+    <div class="journal-entry sam-entry">
+      <div class="sam-badge">the origin story 🌟</div>
+      <div class="journal-date">3 August 🎬</div>
+      <div class="journal-caption">our child... the video that bonded us more than anything. Sam. 💜<br><span class="journal-subcaption">there's genuinely no us without this moment.</span></div>
+      <div class="journal-media">
+        <video src="Sam.mp4" controls class="journal-vid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
+        <div class="media-placeholder" style="display:none"><span>🎬</span><span>Sam.mp4</span></div>
+      </div>
+    </div>
+
+    <!-- ENTRY 1: 22 September -->
+    <div class="journal-entry">
+      <div class="journal-date">22 September ✨</div>
+      <div class="journal-caption">the first time we ever met (still can't believe it happened) 🥹<br><span class="journal-subcaption">the moment went from screens to real life — and somehow it was even better</span></div>
+      <div class="journal-media">
+        <img src="first time.jpg" alt="The first time we met" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="media-placeholder" style="display:none"><span>📷</span><span>first time.jpg</span></div>
+      </div>
+    </div>
+
+    <!-- ENTRY 2: 4 October carousel -->
+    <div class="journal-entry">
+      <div class="journal-date">4 October 💜</div>
+      <div class="journal-caption">the second time we ever met — plus some variations 💀✨</div>
+      <div class="carousel-wrap">
+        <div class="carousel-track" id="oct-track">
+          <div class="carousel-slide">
+            <img src="second time.jpg" alt="Second time" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="media-placeholder" style="display:none"><span>📷</span><span>second time.jpg</span></div>
+            <div class="slide-label">the real deal</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="second time pencil.png" alt="Pencil version" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="media-placeholder" style="display:none"><span>📷</span><span>second time pencil.png</span></div>
+            <div class="slide-label">pencil ✏️</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="second time pen.png" alt="Pen version" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="media-placeholder" style="display:none"><span>📷</span><span>second time pen.png</span></div>
+            <div class="slide-label">pen 🖊️</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="second time comic.png" alt="Comic version" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="media-placeholder" style="display:none"><span>📷</span><span>second time comic.png</span></div>
+            <div class="slide-label">comic 💥</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="second time anime.png" alt="Anime version" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="media-placeholder" style="display:none"><span>📷</span><span>second time anime.png</span></div>
+            <div class="slide-label">anime 🌸</div>
+          </div>
+        </div>
+        <button class="carousel-btn left" onclick="slideCarousel('oct-track', -1)" aria-label="Previous">&#8592;</button>
+        <button class="carousel-btn right" onclick="slideCarousel('oct-track', 1)" aria-label="Next">&#8594;</button>
+        <div class="carousel-dots" id="oct-dots"></div>
+      </div>
+    </div>
+
+    <!-- ENTRY 3: 29 November prom -->
+    <div class="journal-entry">
+      <div class="journal-date">29 November 🎉</div>
+      <div class="journal-caption">the party where we had pro pics made of us EEEEEEEEE 😭💜</div>
+      <div class="prom-grid">
+        <div class="journal-media">
+          <img src="prom 1.jpg" alt="Prom 1" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>prom 1.jpg</span></div>
+        </div>
+        <div class="journal-media">
+          <img src="prom 2.jpg" alt="Prom 2" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>prom 2.jpg</span></div>
+        </div>
+        <div class="journal-media full-width">
+          <video src="prom vid 1.mp4" controls class="journal-vid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
+          <div class="media-placeholder" style="display:none"><span>🎬</span><span>prom vid 1.mp4</span></div>
+        </div>
+        <div class="journal-media full-width">
+          <video src="prom vid 2.mp4" controls class="journal-vid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
+          <div class="media-placeholder" style="display:none"><span>🎬</span><span>prom vid 2.mp4</span></div>
+        </div>
+        <div class="journal-media full-width">
+          <video src="prom vid 3.mp4" controls class="journal-vid" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
+          <div class="media-placeholder" style="display:none"><span>🎬</span><span>prom vid 3.mp4</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTRY 4: 20 December gifts -->
+    <div class="journal-entry">
+      <div class="journal-date">20 December 🎁</div>
+      <div class="journal-caption">we don't have the pictures of us... and me clearly beating you in the button mashing game 😂 but you got me all these gifts I so ever appreciate 💜</div>
+
+      <div class="gift-item">
+        <div class="gift-caption">the original bottles of the bath stuff you got me 🛁</div>
+        <div class="journal-media">
+          <img src="bottles.jpeg" alt="Bath bottles" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>bottles.jpeg</span></div>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-caption">the bag it came in 🛍️</div>
+        <div class="journal-media">
+          <img src="christmas bag.jpeg" alt="Christmas bag" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>christmas bag.jpeg</span></div>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-caption">the bracelets I wear almost everywhere 📿</div>
+        <div class="journal-media">
+          <img src="bracelets.jpeg" alt="Bracelets" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>bracelets.jpeg</span></div>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-caption">the towel I use literally EVERYDAY 🙈</div>
+        <div class="journal-media">
+          <img src="towel.jpeg" alt="Towel" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>towel.jpeg</span></div>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-caption">the letters you got for me then and on Valentine's Day 💌</div>
+        <div class="journal-media">
+          <img src="letters.jpeg" alt="Letters" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>letters.jpeg</span></div>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-caption">the time I came late for the gala — where you cracked new heights 😭✨</div>
+        <div class="journal-media">
+          <img src="gala.jpeg" alt="The gala" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>gala.jpeg</span></div>
+        </div>
+      </div>
+
+      <div class="gift-item">
+        <div class="gift-caption">and here's a random pic I love 😭💜</div>
+        <div class="journal-media">
+          <img src="creature.jpg" alt="The creature" class="journal-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="media-placeholder" style="display:none"><span>📷</span><span>creature.jpg</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 27 THINGS -->
+  <div class="section">
+    <div class="section-label">💜 27 things i love about you</div>
+    <div class="scroll-track" id="track"></div>
+    <div class="scroll-hint">← scroll for more love →</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-text">
+      Here's to forever more, Skittle Pop.<br>
+      Happy 11 months 💜
+    </div>
+    <div class="footer-hearts" onclick="spawnHearts()" title="Click for love!">💜 click for love 💜</div>
+  </div>
+
+</div>
+
+<script>
+  let isPlaying = false;
+  const audio = document.getElementById('bg-audio');
+  const playIcon = document.getElementById('play-icon');
+  const wave = document.getElementById('wave');
+  const musicSub = document.getElementById('music-sub');
+  const musicTitle = document.getElementById('music-title');
+
+  musicTitle.textContent = 'zoomie lofi guitary 🎵';
+  musicSub.textContent = 'playing for you 🎶';
+
+  function tryAutoplay() {
+    audio.play().then(() => {
+      isPlaying = true;
+      playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      wave.classList.remove('paused');
+    }).catch(() => {
+      musicSub.textContent = 'tap play to start the vibe 🎵';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', tryAutoplay);
+  document.addEventListener('click', function startOnClick() {
+    if (!isPlaying) {
+      tryAutoplay();
+    }
+    document.removeEventListener('click', startOnClick);
+  }, { once: true });
+
+  function loadMusic(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    audio.src = URL.createObjectURL(file);
+    musicTitle.textContent = file.name.replace(/\.[^.]+$/, '') || 'Our song 🎵';
+    musicSub.textContent = 'playing for you 🎶';
+    audio.play();
+    isPlaying = true;
+    playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+    wave.classList.remove('paused');
+  }
+
+  function toggleMusic() {
+    if (!audio.src) {
+      musicSub.textContent = 'upload your MP3 first 📁';
+      return;
+    }
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+      playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+      wave.classList.add('paused');
+    } else {
+      audio.play();
+      isPlaying = true;
+      playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+      wave.classList.remove('paused');
+    }
+  }
+
+  const carouselState = {};
+
+  function slideCarousel(trackId, dir) {
+    const track = document.getElementById(trackId);
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    if (!carouselState[trackId]) carouselState[trackId] = 0;
+    carouselState[trackId] = (carouselState[trackId] + dir + total) % total;
+    track.style.transform = `translateX(-${carouselState[trackId] * 100}%)`;
+    updateDots(trackId, total);
+  }
+
+  function updateDots(trackId, total) {
+    const dotsId = trackId.replace('track', 'dots');
+    const dotsEl = document.getElementById(dotsId);
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === (carouselState[trackId] || 0) ? ' active' : '');
+      d.onclick = () => { carouselState[trackId] = i; slideCarousel(trackId, 0); };
+      dotsEl.appendChild(d);
+    }
+  }
+
+  updateDots('oct-track', 5);
+
+  const loveItems = [
+    "I love how cute you are 🥹",
+    "I love your love for Horimiya — me being Miyamura, u being Hori duhh 💀",
+    "I love how you took me so srsly when I asked such a stupid question in the gc 💀",
+    "I love how sweet you are even when I'm the princess 😂",
+    "I love how you just start ranting about random things — I love that you tell me those stories 💜",
+    "I love how we both love cats 🙀 Real... ye that's the sentence",
+    "I love how you love burgers 🍔",
+    "I'll be the coffee, you be the coffee pot ☕",
+    "I love how happy you make me just by texting me — the notification is such a highlight to my day 💜",
+    "I love the smile you put on my face on the daily 😊",
+    "✦ Hollow Purple ✦ 💜",
+    "I love how you're such a cute little girl... like isn't that illegal 👮",
+    "I love your leniency on any spelling like common 😭",
+    "I love the message 'Good night [cute nickname]' every freaking day 🙈",
+    "I love how you called me senpai ☺️",
+    "I love the nickname u gave me — Gurly Pop 🐬",
+    "I love how you introduced me to how beautiful zoomies are 💜",
+    "I love how you gave such big zoomies they're now called boomies 🤯",
+    "I love our baby 🤱 (take it as ye will)",
+    "I love your singing sesh 🎶",
+    "I love how much you love me 😍",
+    "I love how smooth you dropped hints — especially the songs on ur status, such a romantic touch 🌹",
+    "I love absolutely how long our talks can go — a hey at 8pm turning into 'I'm about to explode' at 1am 🕒",
+    "I love your delicate-ness towards flowers n that adventure u took me on 🎢",
+    "I love how we both love black clothes fr fr 🖤",
+    "I love how when ur on a vn u just go like 'Heeeeh?' — why r u so flarking cute 😭😭😭😭",
+    "I love you, Angie. All of you. Always. 💜🌊"
+  ];
+
+  const track = document.getElementById('track');
+  loveItems.forEach((text, i) => {
+    const card = document.createElement('div');
+    card.className = 'love-chip';
+    card.innerHTML = `
+      <div class="tape"></div>
+      <div class="chip-num">${String(i+1).padStart(2,'0')}</div>
+      <div class="chip-from">from: me to you</div>
+      <div class="chip-text">${text}</div>
+    `;
+    track.appendChild(card);
+  });
+
+  function spawnHearts() {
+    const container = document.getElementById('hearts-container');
+    const emojis = ['💜','🩷','✨','💫','🫧','💝','🌸'];
+    for (let i = 0; i < 16; i++) {
+      setTimeout(() => {
+        const h = document.createElement('div');
+        h.className = 'fh';
+        h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        h.style.left = Math.random() * 95 + '%';
+        h.style.animationDuration = (2.5 + Math.random() * 2) + 's';
+        h.style.fontSize = (16 + Math.random() * 18) + 'px';
+        container.appendChild(h);
+        setTimeout(() => h.remove(), 5000);
+      }, i * 80);
+    }
+  }
+</script>
+
+</body>
+</html>
